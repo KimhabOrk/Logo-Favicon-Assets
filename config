@@ -1,0 +1,314 @@
+{
+  "Identity": {
+    "PeerID": "12D3KooWCmGixfiUj6iYcVgibi6uhTF8Gjgp3V79FSPEpvm9AmWS",
+    "PrivKey": "CAESQB73lY84PlBz25vCCLMAr9ieqWy21zIrR/Domd+lBAGVK8gphKm5FZENh9pj3chNkDD0+mzrz0ZhrRF1zekICgM="
+  },
+ 
+	"API": {
+		"HTTPHeaders": {
+			"Access-Control-Allow-Methods": [
+				"PUT",
+				"GET",
+				"POST",
+                "DELETE",
+                "PATCH"
+			],
+			"Access-Control-Allow-Origin": [
+				"*",
+                "http://ipfs.digiofficial.xyz",
+				"http://localhost:3000",
+				"http://localhost:5001",
+				"https://0.0.0.0:5001",
+				"http://127.0.0.1:5001",
+				"https://webui.ipfs.io",
+				"http://139.162.106.30:5001"
+			],
+            "HTTPHeaders": {
+                "Access-Control-Allow-Headers": [
+                "X-Requested-With",
+                "Range",
+                "User-Agent"
+            ]
+		}
+	},
+	"Addresses": {
+		"API": ["/ip4/0.0.0.0/tcp/5001", "/ip4/127.0.0.1/tcp/5001"],
+		"Announce": [],
+		"AppendAnnounce": [],
+		"Gateway": "/ip4/0.0.0.0/tcp/8080",
+		"NoAnnounce": [
+			"/ip4/10.0.0.0/ipcidr/8",
+			"/ip4/100.64.0.0/ipcidr/10",
+			"/ip4/169.254.0.0/ipcidr/16",
+			"/ip4/172.16.0.0/ipcidr/12",
+			"/ip4/192.0.0.0/ipcidr/24",
+			"/ip4/192.0.2.0/ipcidr/24",
+			"/ip4/192.168.0.0/ipcidr/16",
+			"/ip4/198.18.0.0/ipcidr/15",
+			"/ip4/198.51.100.0/ipcidr/24",
+			"/ip4/203.0.113.0/ipcidr/24",
+			"/ip4/240.0.0.0/ipcidr/4",
+			"/ip6/100::/ipcidr/64",
+			"/ip6/2001:2::/ipcidr/48",
+			"/ip6/2001:db8::/ipcidr/32",
+			"/ip6/fc00::/ipcidr/7",
+			"/ip6/fe80::/ipcidr/10"
+		],
+		"Swarm": [
+			"/ip4/0.0.0.0/tcp/4001",
+			"/ip6/::/tcp/4001",
+			"/ip4/0.0.0.0/udp/4001/quic",
+			"/ip4/0.0.0.0/udp/4001/quic-v1",
+			"/ip4/0.0.0.0/udp/4001/quic-v1/webtransport",
+			"/ip6/::/udp/4001/quic",
+			"/ip6/::/udp/4001/quic-v1",
+			"/ip6/::/udp/4001/quic-v1/webtransport"
+		]
+	},
+	"AutoNAT": {},
+	"Bootstrap": [
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt",
+		"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+		"/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa"
+	],
+	"DNS": {
+		"MaxCacheTTL": "5m0s",
+		"Resolvers": {
+			".": "https://cloudflare-dns.com/dns-query",
+			"crypto.": "https://resolver.unstoppable.io/dns-query",
+			"eth.": "https://dns.eth.limo/dns-query",
+			"libre.": "https://ns1.iriseden.fr/dns-query"
+		}
+	},
+	"Datastore": {
+		"BloomFilterSize": 1048576,
+		"GCPeriod": "1h",
+		"HashOnRead": false,
+		"Spec": {
+			"mounts": [
+				{
+					"child": {
+						"path": "blocks",
+						"shardFunc": "/repo/flatfs/shard/v1/next-to-last/2",
+						"sync": true,
+						"type": "flatfs"
+					},
+					"mountpoint": "/blocks",
+					"prefix": "flatfs.datastore",
+					"type": "measure"
+				},
+				{
+					"child": {
+						"compression": "none",
+						"path": "datastore",
+						"type": "levelds"
+					},
+					"mountpoint": "/",
+					"prefix": "leveldb.datastore",
+					"type": "measure"
+				}
+			],
+			"type": "mount"
+		},
+		"StorageGCWatermark": 90,
+		"StorageMax": "100GB"
+	},
+	"Discovery": {
+		"MDNS": {
+			"Enabled": false
+		}
+	},
+	"Experimental": {
+		"FilestoreEnabled": false,
+		"GraphsyncEnabled": false,
+		"Libp2pStreamMounting": false,
+		"OptimisticProvide": false,
+		"OptimisticProvideJobsPoolSize": 0,
+		"P2pHttpProxy": false,
+		"StrategicProviding": false,
+		"UrlstoreEnabled": false
+	},
+	"Gateway": {
+		"APICommands": [],
+		"DeserializedResponses": null,
+		"HTTPHeaders": {
+			"Access-Control-Allow-Headers": [
+				"X-Requested-With",
+				"Range",
+				"User-Agent"
+			],
+			"Access-Control-Allow-Methods": [
+				"GET",
+                "PUT",
+                "POST",
+                "DELETE",
+                "PATCH"
+			],
+			"Access-Control-Allow-Origin": [
+				"*"
+			]
+		},
+		"NoDNSLink": false,
+		"NoFetch": false,
+		"PathPrefixes": [],
+		"PublicGateways": null,
+		"RootRedirect": ""
+	},
+	"Internal": {},
+	"Ipns": {
+		"RecordLifetime": "",
+		"RepublishPeriod": "",
+		"ResolveCacheSize": 128
+	},
+	"Migration": {
+		"DownloadSources": [],
+		"Keep": ""
+	},
+	"Mounts": {
+		"FuseAllowOther": false,
+		"IPFS": "/ipfs",
+		"IPNS": "/ipns"
+	},
+	"Peering": {
+		"Peers": null
+	},
+	"Pinning": {
+		"RemoteServices": {
+			"Filebase": {
+				"API": {
+					"Endpoint": "https://api.filebase.io/v1/ipfs"
+				},
+				"Policies": {
+					"MFS": {
+						"Enable": false,
+						"PinName": "",
+						"RepinInterval": ""
+					}
+				}
+			},
+			"NFT Storage": {
+				"API": {
+					"Endpoint": "https://api.nft.storage"
+				},
+				"Policies": {
+					"MFS": {
+						"Enable": false,
+						"PinName": "",
+						"RepinInterval": ""
+					}
+				}
+			},
+			"Web3-Storage": {
+				"API": {
+					"Endpoint": "https://api.web3.storage"
+				},
+				"Policies": {
+					"MFS": {
+						"Enable": false,
+						"PinName": "",
+						"RepinInterval": ""
+					}
+				}
+			}
+		}
+	},
+	"Provider": {
+		"Strategy": "all"
+	},
+	"Pubsub": {
+		"DisableSigning": false,
+		"Router": ""
+	},
+	"Reprovider": {},
+	"Routing": {
+		"AcceleratedDHTClient": false,
+		"Methods": {
+			"find-peers": {
+				"RouterName": "ParallelHelper"
+			},
+			"find-providers": {
+				"RouterName": "ParallelHelper"
+			},
+			"get-ipns": {
+				"RouterName": "ParallelHelper"
+			},
+			"provide": {
+				"RouterName": "ParallelHelper"
+			},
+			"put-ipns": {
+				"RouterName": "ParallelHelper"
+			}
+		},
+		"Routers": {
+			"LanDHT": {
+				"Parameters": {
+					"AcceleratedDHTClient": false,
+					"Mode": "auto",
+					"PublicIPNetwork": false
+				},
+				"Type": "dht"
+			},
+			"ParallelHelper": {
+				"Parameters": {
+					"Routers": [
+						{
+							"IgnoreErrors": true,
+							"RouterName": "LanDHT",
+							"Timeout": "3s"
+						},
+						{
+							"ExecuteAfter": "2s",
+							"IgnoreErrors": false,
+							"RouterName": "WanDHT",
+							"Timeout": "5m0s"
+						}
+					]
+				},
+				"Type": "parallel"
+			},
+			"WanDHT": {
+				"Parameters": {
+					"AcceleratedDHTClient": false,
+					"Mode": "auto",
+					"PublicIPNetwork": true
+				},
+				"Type": "dht"
+			}
+		},
+		"Type": "custom"
+	},
+	"Swarm": {
+		"AddrFilters": [
+			"/ip4/10.0.0.0/ipcidr/8",
+			"/ip4/100.64.0.0/ipcidr/10",
+			"/ip4/169.254.0.0/ipcidr/16",
+			"/ip4/172.16.0.0/ipcidr/12",
+			"/ip4/192.0.0.0/ipcidr/24",
+			"/ip4/192.0.2.0/ipcidr/24",
+			"/ip4/192.168.0.0/ipcidr/16",
+			"/ip4/198.18.0.0/ipcidr/15",
+			"/ip4/198.51.100.0/ipcidr/24",
+			"/ip4/203.0.113.0/ipcidr/24",
+			"/ip4/240.0.0.0/ipcidr/4",
+			"/ip6/100::/ipcidr/64",
+			"/ip6/2001:2::/ipcidr/48",
+			"/ip6/2001:db8::/ipcidr/32",
+			"/ip6/fc00::/ipcidr/7",
+			"/ip6/fe80::/ipcidr/10"
+		],
+		"ConnMgr": {},
+		"DisableBandwidthMetrics": false,
+		"DisableNatPortMap": true,
+		"RelayClient": {},
+		"RelayService": {},
+		"ResourceMgr": {},
+		"Transports": {
+			"Multiplexers": {},
+			"Network": {},
+			"Security": {}
+		}
+	}
+}
